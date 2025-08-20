@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .sprite {
+        width: 1000px; /* Breite eines Einzelbildes */
+        height: 1000px; /* Höhe eines Einzelbildes */
+        background-image: url('assets/img/sprite_animation.jpg'); /* Sprite Sheet */
+        animation: play 5s steps(10) infinite; /* 10 Einzelbilder */
+        }
+
+        @keyframes play {
+        from { background-position: 0 0; }
+        to   { background-position: -10000px 0; } /* 10 Bilder x 1000px = 10000px */
+}
+    </style>
+</head>
+<body>
+
+    <div class="sprite"></div>
+    
+</body>
+</html>
