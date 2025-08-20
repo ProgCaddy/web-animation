@@ -3,21 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.0/lottie.min.js"></script>
     <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.0/lottie.min.js"></script>
+
+    <style>
+        .stage {
+            width: 400px;
+            height: 400px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+    </style>
+
 </head>
 <body>
-    <div id="lottie-container" style="width:400px; height:400px;"></div>
+
+    <h2>json/lottie-file Einbindung, Animation (springender Ball)</h2>
+    <div id="lottie-container" class="stage"></div>
     
     <script>
-    lottie.loadAnimation({
+        lottie.loadAnimation({
         container: document.getElementById('lottie-container'), // der Container
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: 'assets/lottie-files/my bb animation.json' // Pfad zur Lottie-JSON
+        path: 'assets/lottie-files/my_bb_animation.json' // Pfad zur Lottie-JSON
     });
 </script>
+
+
 
 </body>
 </html>
