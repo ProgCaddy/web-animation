@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Animation</title>
+
+    <style>
+    .stage {
+        width: 300px;
+        height: 300px;
+        background:#f6f4cd;
+        position:relative;
+    }
+    .ball {
+        width: 50px;
+        height: 50px;
+        background-color: #ff6347;
+        border-radius: 50%;
+        position: absolute;
+        transform:translateX(-50%); /* Geht vom Mittelpunkt des Balls aus, ein Trick, verschiebt Bezugspunkt */
+        left:50%;
+        top:40px;
+        animation: bounce 2s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+        0% {
+            transform: translateY(0) translateX(-50%);
+        }
+        50% {
+            transform: translateY(200px) translateX(-50%);
+        }
+        100% {
+            transform: translateY(0) translateX(-50%);
+        }
+    }
+	</style>
+
+</head>
+<body>
+    <div class="stage">
+        <div class="ball"></div>
+    </div>
+    
+    
+</body>
+</html>
