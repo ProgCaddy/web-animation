@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Animation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <style>
+    #box {
+      width: 200px;
+      height: 100px;
+      background-color: #4CAF50;
+      color: white;
+      display: none;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+    <h1>jQuery Animation Beispiel</h1>
+
+    <h2>jQuery Animation mit show und hide</h2>
+<button id="showBtn">Box anzeigen (show)</button>
+<button id="hideBtn">Box verstecken (hide)</button>
+<div id="showHideBox" style="display:none; background:#81c784; padding:20px; border-radius:8px; margin-top:10px;">
+  Diese Box wird mit show und hide angezeigt oder versteckt!
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#showBtn').click(function() {
+      $('#showHideBox').show(800); // Zeigt die Box in 0,8 Sekunden an
+    });
+    $('#hideBtn').click(function() {
+      $('#showHideBox').hide(800); // Versteckt die Box in 0,8 Sekunden
+    });
+  });
+</script>
+
+    <h2>
+        jQuery Animation mit toggle
+    </h2>
+
+    <button id="btn">Umschalten</button>
+<div id="text">Ich bin sichtbar oder auch nicht 😄</div>
+
+<script>
+  $(document).ready(function() {
+    $('#btn').click(function() {
+      $('#text').toggle(); // Sichtbarkeit wird umgeschaltet
+    });
+  });
+</script>
+
+    <h2>
+    jQuery Animation mit Fade Toggle</h2>
+    </h2>
+
+    <button id="toggleBtn">Box anzeigen/verstecken</button>
+  <div id="box">Hallo Natascha 👋</div>
+
+  <script>
+    $(document).ready(function() {
+      $('#toggleBtn').click(function() {
+        $('#box').fadeToggle(1000); // 1000 ms = 1 Sekunde
+      });
+    });
+  </script>
+
+  <h2>jQuery Animation mit Slide Up & Slide Down</h2>
+<button id="upBtn">Box hochschieben (slideUp)</button>
+<button id="downBtn">Box runterschieben (slideDown)</button>
+<div id="slideDemo" style="display:block; background:#90caf9; padding:20px; border-radius:8px; margin-top:10px;">
+  Das ist eine Box für Slide Up & Down!
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#upBtn').click(function() {
+      $('#slideDemo').slideUp(800); // Versteckt die Box nach oben
+    });
+    $('#downBtn').click(function() {
+      $('#slideDemo').slideDown(800); // Zeigt die Box von oben wieder an
+    });
+  });
+</script>
+
+    <h2>
+        jQuery Animation mit Slide Toggle
+    </h2>
+
+    <button id="slideBtn">Text ein-/ausblenden</button>
+<div id="slideBox" style="display:none; background:#ffeb3b; padding:20px; border-radius:8px; margin-top:10px;">
+  Das ist ein Slide Toggle Beispiel!
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#slideBtn').click(function() {
+      $('#slideBox').slideToggle(800); // 800 ms = 0,8 Sekunden
+    });
+  });
+</script>
+
+<h2>jQuery Animation mit animate und Farbwechsel</h2>
+<button id="animateBtn">Box bewegen & blau färben</button>
+<button id="shrinkBtn">Box zurücksetzen & rot färben</button>
+<div id="animateBox2" style="width:100px; height:100px; background:#e57373; margin-top:10px; border-radius:8px; position:relative;">
+  Animierte Box
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#animateBtn').click(function() {
+      $('#animateBox2').animate({
+        left: '150px',
+        width: '200px',
+        height: '200px',
+        opacity: 0.7
+      }, 1200);
+      $('#animateBox2').css('background-color', 'blue');
+    });
+    $('#shrinkBtn').click(function() {
+      $('#animateBox2').animate({
+        left: '0px',
+        width: '100px',
+        height: '100px',
+        opacity: 1
+      }, 1200);
+      $('#animateBox2').css('background-color', '#e57373');
+    });
+  });
+</script>
+
+<h2>jQuery UI: Draggable Box (JQuery Pluquin)</h2>
+<div id="draggableBox" style="width:120px; height:120px; background:#ffd54f; color:#333; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-top:10px; cursor:move;">
+  Zieh mich!
+</div>
+
+<script>
+  $(function() {
+    $('#draggableBox').draggable();
+  });
+</script>
+
+<h2>jQuery Verkettete Animation</h2>
+<button id="chainBtn">Starte Animation</button>
+<div id="chainBox" style="width:100px; height:100px; background:#ba68c8; margin-top:10px; border-radius:8px; position:relative; color:white; display:flex; align-items:center; justify-content:center;">
+  Verkettet!
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#chainBtn').click(function() {
+      $('#chainBox')
+        .animate({ left: '150px', opacity: 0.5 }, 800)
+        .animate({ top: '50px', width: '200px' }, 800)
+        .animate({ left: '0px', opacity: 1, width: '100px', top: '0px' }, 800);
+    });
+  });
+</script>
+    
+</body>
+</html>
